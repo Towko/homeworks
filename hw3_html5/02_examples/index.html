@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Cписок покупок</title>
+
+    <style>
+        ol {
+            margin: 0em;
+        }
+
+        /* PART 1*/
+        ul li {
+            position: relative;
+            list-style-type: none;
+            font-size: 20px;
+            line-height: 2;
+            width: 330px;
+            border-bottom: 1px solid #fcfcfc;
+        }
+
+        input[type="checkbox"] {
+            opacity: 0;
+            z-index: -1;
+        }
+
+        label {
+            background-color: #e0e0e0;
+            display: inline-flex;
+            position: absolute;
+            width: 300px;
+            left: 0;
+            z-index: 555;
+            display: inline-flex;
+            align-items: center;
+            padding: 0 15px;
+            transition: .3s;
+        }
+
+        label:before {
+            content: "";
+            display: inline-flex;
+            border: 1px solid #000;
+            width: 20px;
+            height: 20px;
+            background: none;
+            margin-left: 0;
+            margin-right: 10px;
+            transition: .3s;
+        }
+
+        label:after {
+            content: "\2713";
+            display: inline-flex;
+            width: 20px;
+            height: 20px;
+            color: red;
+            left: 14px;
+            position: absolute;
+            top: 5px;
+            font-size: 35px;
+            transform: scale(0);
+            transition: .3s;
+        }
+
+        label:before>input:checked {
+            background: #000;
+        }
+
+        input:checked+label {
+            text-decoration: line-through;
+            text-decoration-color: red;
+        }
+
+        input:checked+label:after {
+            content: "\2713";
+            display: inline-flex;
+            width: 20px;
+            height: 20px;
+            color: red;
+            left: 14px;
+            position: absolute;
+            top: -17px;
+            font-size: 35px;
+            transform: scale(1);
+            transition: 0.3s;
+        }
+
+        input:not(:checked)+label:hover {
+            background-color: #dfb7b744;
+            transition: .3s;
+        }
+
+        input:checked+label:hover {
+            background-color: #e58ade44;
+            transition: .3s;
+        }
+
+
+        /* PART 2 */
+        ul>span {
+            font-size: 24px;
+        }
+
+        nav li {
+            background: #e0e0e0;
+            padding: 0 15px;
+        }
+
+        nav li a {
+            color: #000;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        nav li:hover a {
+            color: #ff0000;
+            text-decoration: underline;
+            text-decoration-color: #ff0000;
+            transition: .3s;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Homework part 1</h3>
+    <blockquote>
+        1) Написать разметку для списка покупок
+        <ol>
+            <li>наличие заголовка</li>
+            <li>пункты списка выполнены ul или ol</li>
+            <li>при клике по label checkbox должен менять свое состояние</li>
+        </ol>
+    </blockquote>
+
+    <h1>Shop list by Demydov Anton</h1>
+
+    <ul>
+        <li>
+            <input id="1" type="checkbox">
+            <label for="1">Potato</label>
+        </li>
+        <li>
+            <input id="2" type="checkbox">
+            <label for="2">Cabbage</label>
+        </li>
+        <li>
+            <input id="3" type="checkbox">
+            <label for="3">Carrot</label>
+        </li>
+        <li>
+            <input id="4" type="checkbox">
+            <label for="4">Crisps</label>
+        </li>
+        <li>
+            <input id="5" type="checkbox">
+            <label for="5">Beer</label>
+        </li>
+        <li>
+            <input id="6" type="checkbox">
+            <label for="6">Cola</label>
+        </li>
+    </ul>
+
+    <br><br>
+
+    <h3>Homework part 2</h3>
+
+    <h2>Shop list by Demydov Anton</h2>
+    <blockquote>
+        2) Из прикрепленного файла создать документ, содержащий только оглавление в виде ссылок на закладки в другом
+        документе,<br>
+        после каждого раздела добавить ссылку на документ с оглавнением<br>
+        - все ссылки рабочие
+    </blockquote>
+
+    <nav id="themes-list">
+        <ul><span>Оглавление:</span>
+            <li><a target="_blank" href="01_semantic_tags.html">Семантические теги</a></li>
+            <li><a target="_blank" href="02_links.html">Ссылки</a></li>
+            <li><a target="_blank" href="03_media.html">Медиа</a></li>
+            <li><a target="_blank" href="04_forms.html">Формы</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>
